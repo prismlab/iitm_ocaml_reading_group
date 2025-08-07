@@ -37,17 +37,9 @@ Clone the base environment:
 ``` bash
 git clone https://github.com/prismlab/iitm_ocaml_reading_group
 cd iitm_ocaml_reading_group/chapters
-docker run -it -p 8888:8888 -v "$(pwd)":/lectures kayceesrk/cs3100_iitm:m25
-
-
+docker run -it -p 8888:8888 -v "$(pwd)":/chapters durwasa/ocaml_reading_group
 ### Open the link that appears in your terminal (http://127.0.0.1:8888) to access the environment.
 
-```
-
-### For this group:
-
-``` bash
-docker run -it -p 8888:8888 -v "$(pwd)":/chapters durwasa/ocaml_reading_group
 ```
 
 Our JupyterLab environment is adapted from the [CS3100 Docker configuration](https://github.com/kayceesrk/cs3100_m25/tree/main/_docker) developed by Prof. KC Sivaramakrishnan.
