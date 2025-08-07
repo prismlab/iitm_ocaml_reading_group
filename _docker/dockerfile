@@ -1,0 +1,43 @@
+FROM ocaml/opam:ubuntu-ocaml-4.14
+
+USER root
+RUN apt update --fix-missing && \
+    apt install -y libgmp-dev pkg-config libzmq3-dev zlib1g-dev curl python3-pip
+
+USER opam
+WORKDIR /home/opam
+
+# Install ocaml-jupyter and merlin
+RUN opam update && \
+    opam install -y jupyter merlin
+
+# Install uv and JupyterLab
+RUN curl -LsSf https://astral.sh/uv/install.sh | sh
+ENV PATH="/home/opam/.local/bin:/home/opam/.local/share/uv/tools/jupyterlab/bin:$PATH"
+
+# Install JupyterLab manually (via uv)
+RUN uv venv .venv && \
+    uv pip install jupyterlab
+
+# Register OCaml kernel
+ENV PATH="/home/opam/.venv/bin:$PATH"
+RUN echo '#use "topfind";;' >> ~/.ocamlinit && \
+    echo 'Topfind.log:=ignore;;' >> ~/.ocamlinit && \
+    echo '#require "merlin";;' >> ~/.ocamlinit && \
+    eval $(opam env) && \
+    ocaml-jupyter-opam-genspec && \
+    jupyter kernelspec install --name ocaml-jupyter "$(opam var share)/jupyter" --user
+
+# Install extra Jupyter extensions
+RUN uv pip install RISE jupyterlab-rise jupyterlab-mathjax3 jupyter-ai langchain-openai langchain-anthropic
+
+# Enable JupyterLab dark theme by default
+RUN mkdir -p /home/opam/.jupyter/lab/user-settings/@jupyterlab/apputils-extension && \
+    echo '{ "theme": "JupyterLab Dark" }' > /home/opam/.jupyter/lab/user-settings/@jupyterlab/apputils-extension/themes.jupyterlab-settings
+
+# Set working directory
+WORKDIR /chapters
+
+# Expose port and run JupyterLab
+EXPOSE 8888
+CMD ["jupyter", "lab", "--ip=0.0.0.0", "--port=8888", "--no-browser", "--allow-root"]
