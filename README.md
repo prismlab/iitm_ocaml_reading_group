@@ -64,7 +64,6 @@ We use Discord for asynchronous discussion, help, and coordination:
 
 [Join Discord](https://discord.gg/hDZSGVMNgV)
 
-
-✏️ Contributing
+### ✏️ Contributing
 
 If you want to help facilitate a session, add notes, or improve the environment setup, feel free to open a PR or reach out on Discord!
