@@ -50,7 +50,7 @@ This image comes preconfigured with:
 
 All .ipynb notes taken during sessions will be saved locally. We encourage participants to keep notes collaboratively and dive deeper into any area that sparks curiosity.
 
-🛠️ Future Plans
+### 🛠️ Future Plans
 
 We aim to gradually:
 - Setup an OCaml IDE/testbed (e.g., VSCode with Merlin or Emacs)
@@ -58,7 +58,7 @@ We aim to gradually:
 - Learn how to write tests, use libraries, and understand the OCaml ecosystem
 - Integrate with package managers, version control, and more
 
-🗣️ Join the Discussion
+### 🗣️ Join the Discussion
 
 We use Discord for asynchronous discussion, help, and coordination:
 
