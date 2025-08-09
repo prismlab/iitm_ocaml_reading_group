@@ -64,7 +64,7 @@ We use Discord for asynchronous discussion, help, and coordination:
 
 [Join Discord](https://discord.gg/hDZSGVMNgV)
 
-### Non-IITM folks
+### 🌏 Non-IITM folks
 
 Folks not associated with IITM are welcome to attend the reading group, provided they actively participate in the discussions. For space and security constraints, and also to keep the discussion forum useful, we are limiting the number of non-IITM participants (currently capped at 10). If you are not associated with IITM, we ask that you include a GitHub, LinkedIn, or any relevant link in the form that shows your interest in programming or OCaml.
 
