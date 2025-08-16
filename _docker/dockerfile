@@ -9,7 +9,7 @@ WORKDIR /home/opam
 
 # Install ocaml-jupyter and merlin
 RUN opam update && \
-    opam install -y jupyter merlin
+    opam install -y jupyter merlin core
 
 # Install uv and JupyterLab
 RUN curl -LsSf https://astral.sh/uv/install.sh | sh

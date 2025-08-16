@@ -10,7 +10,7 @@ We are reading through _[Real World OCaml](https://dev.realworldocaml.org/)_, co
 
 | Date           | Discussion Starter | Chapter(s) | Title                                                |
 | -------------- | ------------------ | ---------- | ---------------------------------------------------- |
-| August 16th    | TBD                | 1          | A Guided Tour                                        |
+| August 16th    | durwasa            | 1          | A Guided Tour                                        |
 | August 23rd    | TBD                | 2–3        | Variables, Functions, Lists, and Patterns            |
 | August 30th    | TBD                | 4–5        | Files, Modules, Programs, and Records                |
 | September 6th  | TBD                | 6–8        | Variants, Error Handling, and Imperative Programming |
